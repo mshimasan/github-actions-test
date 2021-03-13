@@ -1,0 +1,13 @@
+name: Dump GitHub Event
+
+on:
+  push:
+
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump paykload
+        run: echo toJson($GITHUB_EVENT)
+        env:
+          GITHUB_EVENT: github.event
