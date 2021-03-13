@@ -7,7 +7,7 @@ jobs:
   dump:
     runs-on: ubuntu-latest
     steps:
-      - name: Dump paykload
-        run: echo toJson($GITHUB_EVENT)
+      - name: Dump payload
+        run: echo $GITHUB_EVENT
         env:
-          GITHUB_EVENT: github.event
+          GITHUB_EVENT: ${{ toJson(github) }}
