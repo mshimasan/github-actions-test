@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Dump payload
-        run: echo $GITHUB_EVENT
+        run: |
+          echo $GITHUB_EVENT
+          echo "HELLO"
         env:
           GITHUB_EVENT: ${{ toJson(github) }}
